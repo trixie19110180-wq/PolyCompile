@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: polycompile
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: RUNNER_PROVIDER
+        value: mock
+      - key: PISTON_URL
+        value: https://emkc.org/api/v2/piston
+      - key: MAX_UPLOAD_MB
+        value: 8
+      - key: MAX_FILES
+        value: 80
+      - key: RUN_TIMEOUT_MS
+        value: 5000
+      - key: AI_ASSISTANT_ENABLED
+        value: false
