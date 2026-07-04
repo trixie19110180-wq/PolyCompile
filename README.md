@@ -3,6 +3,7 @@
 PolyCompile is a GitHub-ready, Render-deployable scaffold for a multi-language code workspace. It includes:
 
 - A React editor UI with desktop and mobile layouts.
+- Workspace modes for plain code editing, website preview, transforms, graphics planning, file browsing, and an AI side panel.
 - Multi-file and folder upload.
 - Live HTML/CSS/JavaScript preview in a sandboxed iframe.
 - API contracts for Python, JavaScript, C, C++, C#, and Rust execution.
