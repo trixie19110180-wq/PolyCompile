@@ -281,6 +281,16 @@ export function App() {
     </section>
   );
 
+  const plainCodePane = (
+    <textarea
+      className="code-only-textarea"
+      spellCheck={false}
+      value={activeFile.content}
+      onChange={(event) => updateActiveFile(event.currentTarget.value)}
+      aria-label="Code editor"
+    />
+  );
+
   const consolePane = (
     <section className="console-region">
       <div className="pane-head">
@@ -334,7 +344,7 @@ export function App() {
     </aside>
   );
 
-  const modeClass = `workspace mode-${mode}${assistantOpen && mode !== "agent" ? " assistant-visible" : ""}`;
+  const modeClass = `workspace mode-${mode}${assistantOpen && mode !== "agent" && mode !== "code" ? " assistant-visible" : ""}`;
 
   return (
     <main className="app-shell">
@@ -398,10 +408,7 @@ export function App() {
       <section className={modeClass}>
         {mode === "code" && (
           <>
-            {fileRail}
-            {editorPane}
-            {consolePane}
-            {assistantOpen && assistantPane}
+            {plainCodePane}
           </>
         )}
 

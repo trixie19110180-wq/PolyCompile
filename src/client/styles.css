@@ -80,10 +80,13 @@ button {
 
 .toolbar {
   gap: 10px;
+  min-width: 0;
 }
 
 .mode-tabs {
   min-height: 38px;
+  min-width: 0;
+  max-width: 100%;
   gap: 3px;
   padding: 3px;
   border: 1px solid #cfd8d4;
@@ -175,11 +178,12 @@ select {
 }
 
 .workspace.mode-code {
-  grid-template-columns: 220px minmax(380px, 1.2fr) minmax(360px, 0.8fr);
+  grid-template-columns: 1fr;
+  background: #101614;
 }
 
 .workspace.mode-code.assistant-visible {
-  grid-template-columns: 220px minmax(380px, 1.2fr) minmax(360px, 0.8fr) 260px;
+  grid-template-columns: 1fr;
 }
 
 .workspace.mode-transform {
@@ -294,6 +298,18 @@ textarea {
 
 .editor-pane > textarea {
   padding: 18px;
+  background: #101614;
+  color: #e7f8ef;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  tab-size: 2;
+}
+
+.code-only-textarea {
+  min-height: 0;
+  height: 100%;
+  padding: 22px;
   background: #101614;
   color: #e7f8ef;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -542,10 +558,19 @@ pre {
     align-items: stretch;
     flex-direction: column;
     padding: 12px;
+    min-width: 0;
+    max-width: 100vw;
+  }
+
+  .brand {
+    min-width: 0;
+    width: 100%;
   }
 
   .toolbar {
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
   }
 
   .mode-tabs {
